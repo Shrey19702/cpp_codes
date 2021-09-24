@@ -19,12 +19,10 @@ int countPrimes(int n) {
     if(n<3){
         return 0;
     }
-
     bool arr[n];
     for(int i=0; i<n; i++){
         arr[i]=true;
     }
-
     for(int p=2; p*p<=n; p++){
         for(int i=p*p; i<n; i+=p){
             arr[i]=false;
@@ -36,7 +34,6 @@ int countPrimes(int n) {
             count++;
         }
     }
-
     return count;
 }
 
