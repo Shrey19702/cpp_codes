@@ -37,6 +37,25 @@ int countPrimes(int n) {
     return count;
 }
 
+//.........prime factors of a number.........
+set<lli> prime_fact(int a){
+    set<lli> as;
+    while (a%2 == 0) { 
+        as.insert(2);
+        a = a/2; 
+    } 
+    for (lli i = 3; i*i <= (a); i = i+2) { 
+        while (a%i == 0) { 
+            as.insert(i); 
+            a = a/i; 
+        } 
+    } 
+    if (a > 2) 
+        as.insert(a);   
+    
+    return as;
+}
+    
 
 
 int main(){
